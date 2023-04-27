@@ -1,7 +1,7 @@
 export const getTheAmountOfWeeksNecessaryForTheMonthStructure = (
   numberOfDays: number,
   initialDayOfWeek: number
-): number => Math.ceil((numberOfDays + (initialDayOfWeek - 1)) / 7);
+): number => Math.ceil((numberOfDays + initialDayOfWeek) / 7);
 
 export const getANumberArray = (
   sizeOfArray: number,

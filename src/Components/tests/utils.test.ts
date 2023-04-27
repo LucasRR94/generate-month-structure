@@ -78,7 +78,7 @@ describe('getTheAmountOfWeeksNecessaryForTheMonthStructure', () => {
   it('can correctly calculate the amount of weeks of month with a average month that start on saturday', () => {
     expect(
       getTheAmountOfWeeksNecessaryForTheMonthStructure(30, 6)
-    ).toStrictEqual(5);
+    ).toStrictEqual(6);
   });
 
   it('can correctly calculate the amount of weeks of month with max size that start on monday', () => {
