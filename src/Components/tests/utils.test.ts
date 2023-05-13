@@ -4,6 +4,8 @@ import {
   getANumberArray,
   getMonthArray,
   getTheAmountOfWeeksNecessaryForTheMonthStructure,
+  BellongMonth,
+  Day,
 } from '../utils';
 
 jest.useFakeTimers().setSystemTime(new Date('2023-04-21'));
@@ -91,5 +93,31 @@ describe('getTheAmountOfWeeksNecessaryForTheMonthStructure', () => {
     expect(
       getTheAmountOfWeeksNecessaryForTheMonthStructure(31, 6)
     ).toStrictEqual(6);
+  });
+});
+
+describe('BellongMonth', () => {
+  it('correctly is cappable of describing the three states of month', () => {
+    const previous: BellongMonth = BellongMonth.previous;
+    const current: BellongMonth = BellongMonth.current;
+    const next: BellongMonth = BellongMonth.next;
+    expect(previous).toEqual('previous');
+    expect(current).toEqual('current');
+    expect(next).toEqual('next');
+  });
+});
+
+describe('Day', () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const checkTheTypeOfInterfaceDay = (object: any): object is Day =>
+    'content' in object && 'flagging' in object;
+
+  it('correctly accept object of type Day', () => {
+    const day: Day = {content: 0, flagging: BellongMonth.current};
+    expect(checkTheTypeOfInterfaceDay(day)).toBeTruthy();
+  });
+
+  it('correctly rejects object of type Day', () => {
+    expect(checkTheTypeOfInterfaceDay({content: 10})).toBeFalsy();
   });
 });
