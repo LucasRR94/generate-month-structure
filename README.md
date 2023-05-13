@@ -45,6 +45,19 @@ The array returned will be:
 ]
 ```
 
+The lib export the function `createMonthStructureFlaggingDaysAccordingMonth` that return an array with the similar struture as `createMonthStructure`, but instead of numbers, it returns a interface called Day, that contains the content(the day number),
+and the flagging, that is a enum, that inform if the months is previous, current or next month. This feature could be used for
+generate different behaviours, according to the flagging status.
+
+```
+
+interface Day {
+content: number;
+flagging: BellongMonth;
+}
+
+```
+
 ## Tecnologies Used:
 
 - Typescript
