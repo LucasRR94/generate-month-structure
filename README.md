@@ -58,6 +58,18 @@ flagging: BellongMonth;
 
 ```
 
+The Day interface as the enum BellongMonth are exported by this package, and can being access and used in typescript projects. Above the BellongMonth enum description:
+
+```
+
+export enum BellongMonth {
+  previous = 'previous',
+  current = 'current',
+  next = 'next',
+}
+
+```
+
 ## Tecnologies Used:
 
 - Typescript
