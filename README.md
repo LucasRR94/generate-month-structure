@@ -9,6 +9,42 @@ it complete lack of third packages for generate the month.
 
 - Generate the month structure with all the days of the necessary rows for represent the month fulfilled with the previous and the next month
 
+## Installation:
+
+This library could be installed using npm as:
+
+```
+    npm install generate-month-structure
+```
+
+## Usage
+
+The lib export a object with the function `createMonthStructure`, that requeries a js Date object, and return the full structure of the current month,
+with the required rows of the current month passed to the `createMonthStructure`, and the remaining days of the previous and the next month.Therefore
+an array with all the rows necessary for represent the current month are returned, including previous and next positions of the current month filled.
+
+```
+
+    const { createMonthStructure } = require("generate-month-structure");
+    const currentMonth = createMonthStructure(new Date(2023, 03, 01));
+
+```
+
+In the above example, the current month passed is **2023-04-01**, and will return the structure of all rows of the current month, and the remaining days
+of the previous month **2023-03**, and the next month **2023-05** that are empty in the necessary rows for display the current month.
+The array returned will be:
+
+```
+
+[
+26, 27, 28, 29, 30, 31, 1, 2, 3, 4,
+5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+25, 26, 27, 28, 29, 30, 1, 2, 3, 4,
+5, 6
+]
+```
+
 ## Tecnologies Used:
 
 - Typescript
